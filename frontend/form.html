@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Форма опитування</title>
+<link rel="stylesheet" href="form.css">
+</head>
+<body>
+<h1>Опитування для вакансій</h1>
+<form id="surveyForm">
+  <label for="employmentStatus">Який ваш поточний статус занятості?</label>
+  <select id="employmentStatus" name="employmentStatus">
+    <option value="fullTime">Працюю на повну ставку</option>
+    <option value="partTime">Працюю на часткову ставку</option>
+    <option value="unemployed">Безробітний</option>
+    <option value="student">Студент, який шукає роботу</option>
+    <option value="other">Інше</option>
+  </select>
+  <br><br>
+
+  <label for="workExperience">Скільки років досвіду роботи у вас в даній галузі?</label>
+  <input type="number" id="workExperience" name="workExperience" min="0">
+  <br><br>
+
+  <label for="expertise">Яка ваша основна область експертизи або спеціалізація?</label>
+  <input type="text" id="expertise" name="expertise">
+  <br><br>
+
+  <label for="desiredPosition">На яку посаду ви зацікавлені?</label>
+  <input type="text" id="desiredPosition" name="desiredPosition">
+  <br><br>
+
+  <label for="workSchedule">Які графіки роботи для вас прийнятні?</label>
+  <select id="workSchedule" name="workSchedule">
+    <option value="fullTime">Повна зайнятість</option>
+    <option value="partTime">Часткова зайнятість</option>
+    <option value="flexible">Гнучкий графік</option>
+    <option value="remote">Віддалена робота</option>
+  </select>
+  <br><br>
+
+  <label for="benefits">Які бонуси або додаткові пільги ви очікуєте від роботодавця?</label>
+  <textarea id="benefits" name="benefits" rows="4"></textarea>
+  <br><br>
+
+  <label for="availability">Яка ваша доступність для початку роботи?</label>
+  <input type="text" id="availability" name="availability">
+  <br><br>
+
+  <label for="skills">Які ваші ключові навички, які ви хочете підкреслити?</label>
+  <textarea id="skills" name="skills" rows="4"></textarea>
+  <br><br>
+
+  <label for="motivation">Що мотивує вас працювати в нашій компанії?</label>
+  <textarea id="motivation" name="motivation" rows="4"></textarea>
+  <br><br>
+
+  <label for="additionalComments">Чи є у вас додаткові коментарі або питання?</label>
+  <textarea id="additionalComments" name="additionalComments" rows="4"></textarea>
+  <br><br>
+
+  <!-- Нові питання для сайту з вакансіями -->
+  <label for="keySkills">Які ключові навички ви володієте і хочете підкреслити при пошуку роботи?</label>
+  <textarea id="keySkills" name="keySkills" rows="4"></textarea>
+  <br><br>
+
+  <label for="education">Яка ваша освіта та кваліфікація, які можуть бути важливими для роботи, на яку ви претендуєте?</label>
+  <textarea id="education" name="education" rows="4"></textarea>
+  <br><br>
+
+  <!-- Кнопка для відправлення форми -->
+  <button type="submit">Надіслати</button>
+</form>
+
+<div class="buttons-container">
+  <button id="filterByKeySkillsButton">Фільтрувати за ключовими навичками</button>
+  <button id="filterByEducationButton">Фільтрувати за освітою та кваліфікацією</button>
+  <button id="filterByAvailabilityButton">Фільтрувати за доступністью</button>
+  <button id="displayLocalStorage">Дані</button>
+</div>
+
+
+<div id="filterResults"></div> <!-- Контейнер для виведення результатів фільтрації -->
+<div id="localStorageContainer"></div> <!-- Контейнер для виведення результатів фільтрації -->
+
+<script src="main.js"></script> <!-- Підключення скрипту -->
+</body>
+</html>

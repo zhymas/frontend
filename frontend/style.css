@@ -1,0 +1,115 @@
+/* Стилі для футера */
+footer {
+    background-color: #e8e8e8;
+    padding: 10px;
+    text-align: center;
+}
+
+footer div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 10px;
+}
+
+/* Стилі для основного контенту */
+#main {
+    margin: 20px;
+}
+
+#main h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#main small {
+    font-size: 12px;
+    color: #777;
+}
+
+#main div {
+    margin-bottom: 20px;
+}
+
+#main a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+#main hr {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+/* Анімація для появи блоків */
+#main div {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Media query для адаптивності */
+@media screen and (max-width: 768px) {
+    #main {
+        margin: 10px;
+    }
+
+    #main h1 {
+        font-size: 20px;
+    }
+
+    #main div {
+        margin-bottom: 10px;
+    }
+}
+
+/* Стилі для aside */
+aside {
+    float: right;
+    margin-top: 150px;
+    margin-right: 10px; 
+    width: 250px; 
+    background-color: #f0f0f0; 
+    padding: 20px; 
+    box-sizing: border-box; 
+}
+
+aside p {
+    font-weight: bold; 
+}
+
+aside input[type="text"] {
+    width: 100%; 
+    margin-bottom: 10px; 
+}
+
+aside div a {
+    display: block; 
+    text-decoration: none; 
+    color: #333; 
+    margin-bottom: 5px; 
+}
+
+aside div a:hover {
+    color: #007bff; 
+}
+
+/* Стилі для основного контенту */
+main {
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden; /* Заборона прокрутки внутрішніх елементів */
+}

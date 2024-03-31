@@ -1,0 +1,111 @@
+{
+    "testName": "Тест про модульні будинки",
+    "questions": [
+      {
+        "question": "Коли звʼявився джині?",
+        "answers": [
+          {
+            "answer": "2001",
+            "isCorrect": false
+          },
+          {
+            "answer": "2010",
+            "isCorrect": false
+          },
+          {
+            "answer": "2018",
+            "isCorrect": false
+          },
+          {
+            "answer": "2012",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "question": "Коли була опублікована перша вакансія на джині ?",
+        "answers": [
+          {
+            "answer": "15 грудня",
+            "isCorrect": true
+          },
+          {
+            "answer": "1 січня",
+            "isCorrect": false
+          },
+          {
+            "answer": "28 квітня",
+            "isCorrect": false
+          },
+          {
+            "answer": "31 лютого",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "Яких спеціалістів шукають на джині?",
+        "answers": [
+          {
+            "answer": "Будівники",
+            "isCorrect": false
+          },
+          {
+            "answer": "Водії",
+            "isCorrect": false
+          },
+          {
+            "answer": "Футболістів",
+            "isCorrect": false
+          },
+          {
+            "answer": "IT-спеціалістів",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "question": "Скільки спеціалістів на даний час знаходиться на джині ?",
+        "answers": [
+          {
+            "answer": "90,000",
+            "isCorrect": true
+          },
+          {
+            "answer": "20,000",
+            "isCorrect": false
+          },
+          {
+            "answer": "30,000",
+            "isCorrect": false
+          },
+          {
+            "answer": "55,000",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "Коли стався пік спеціалістів на djini ?",
+        "answers": [
+          {
+            "answer": "2018",
+            "isCorrect": false
+          },
+          {
+            "answer": "2019",
+            "isCorrect": false
+          },
+          {
+            "answer": "2015",
+            "isCorrect": true
+          },
+          {
+            "answer": "2023",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  }
+  

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Canvas Game</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas" width="800" height="400"></canvas>
+
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let player = {
+            x: canvas.width / 2,
+            y: canvas.height - 30,
+            width: 50,
+            height: 50,
+            speed: 5
+        };
+
+        let coins = [];
+        const coinSize = 20;
+        let score = 0;
+
+        function drawPlayer() {
+            ctx.fillStyle = 'blue';
+            ctx.fillRect(player.x, player.y, player.width, player.height);
+        }
+
+        function drawCoins() {
+            coins.forEach(coin => {
+                ctx.fillStyle = 'gold';
+                ctx.beginPath();
+                ctx.arc(coin.x, coin.y, coinSize / 2, 0, Math.PI * 2);
+                ctx.fill();
+            });
+        }
+
+        function updateGameArea() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Move player
+            if (keys.ArrowLeft && player.x > 0) {
+                player.x -= player.speed;
+            }
+            if (keys.ArrowRight && player.x < canvas.width - player.width) {
+                player.x += player.speed;
+            }
+
+            // Generate new coin
+            if (Math.random() < 0.02) {
+                coins.push({ x: Math.random() * (canvas.width - coinSize) + coinSize / 2, y: 0 });
+            }
+
+            // Update coin positions and check for collisions
+            coins.forEach((coin, index) => {
+                coin.y += 2;
+                if (coin.y > canvas.height) {
+                    coins.splice(index, 1);
+                } else if (
+                    player.x < coin.x + coinSize &&
+                    player.x + player.width > coin.x &&
+                    player.y < coin.y + coinSize &&
+                    player.y + player.height > coin.y
+                ) {
+                    coins.splice(index, 1);
+                    score++;
+                }
+            });
+
+            // Draw everything
+            drawPlayer();
+            drawCoins();
+
+            // Draw score
+            ctx.fillStyle = 'black';
+            ctx.font = '24px Arial';
+            ctx.fillText(`Score: ${score}`, 10, 30);
+
+            requestAnimationFrame(updateGameArea);
+        }
+
+        const keys = {};
+        document.addEventListener('keydown', event => {
+            keys[event.key] = true;
+        });
+        document.addEventListener('keyup', event => {
+            keys[event.key] = false;
+        });
+
+        updateGameArea();
+    </script>
+</body>
+</html>
